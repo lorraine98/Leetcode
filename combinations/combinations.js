@@ -1,9 +1,7 @@
 function combine(n, k) {
-    
     const combinations = [];
     const comb = [];
     const nums = [...Array(n)].map((_, idx) => idx+1);
-    console.log(nums)
     
     function updateCombinations(pivot) {
         if(k === comb.length) {
