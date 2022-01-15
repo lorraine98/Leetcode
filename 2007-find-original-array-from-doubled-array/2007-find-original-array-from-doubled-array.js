@@ -4,21 +4,20 @@ var findOriginalArray = function(changed) {
     changed.sort((a, b) => b - a);
     
     const answer = [];
-    const originalArr = [];
     
     while(changed.length) {
+        let isBreak = false;
         const original = changed.pop();
-        originalArr.push(original);
         const doubled = original * 2;
         for(let i=changed.length-1; i>=0; i--) {
             if(changed[i] === doubled) {
                 answer.push(original);
                 changed.splice(i, 1);
-                originalArr.pop();
+                isBreak = true;
                 break;
             }
         }
-        if(originalArr.length) return [];
+        if(!isBreak) return [];
     } 
     return answer;
 };
