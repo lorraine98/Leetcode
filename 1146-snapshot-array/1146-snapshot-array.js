@@ -9,11 +9,9 @@ SnapshotArray.prototype.set = function(index, val) {
 };
 
 SnapshotArray.prototype.snap = function() {
-    this.snapCnt++;
-    let snap_id = this.snapCnt-1;
     let snapshot = [...this.arr];
-    this.snapMap.set(snap_id, snapshot);
-    return snap_id; 
+    this.snapMap.set(this.snapCnt, snapshot);
+    return this.snapCnt++; 
 };
 
 SnapshotArray.prototype.get = function(index, snap_id) {
