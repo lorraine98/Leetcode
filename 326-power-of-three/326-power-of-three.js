@@ -7,8 +7,7 @@ var isPowerOfThree = function(n) {
     let N = n;
     while(N > 1) {
         if(N % 3 === 0) {
-            const newN = parseInt(N / 3);
-            N = newN;
+           N = parseInt(N / 3);
         }
         else {
             return false;
