@@ -11,8 +11,8 @@
  */
 
 var mergeNodes = function(head) {
-    let result = new ListNode();
-    let temp = result;
+    let linkedList = new ListNode();
+    let temp = linkedList;
     
     while(head){
         if(head.val === 0 && head.next){
@@ -22,5 +22,6 @@ var mergeNodes = function(head) {
         temp.val += head.val;
         head = head.next;
     }
-    return result.next;
+    
+    return linkedList.next;
 };
