@@ -11,12 +11,12 @@
  */
 
 var mergeNodes = function(head) {
-    let result = new ListNode();
+    let result = new ListNode(-1);
     let temp = result;
     
     while(head){
         if(head.val === 0 && head.next){
-            temp.next = new ListNode();
+            temp.next = new ListNode(0);
             temp = temp.next;
         }
         temp.val += head.val;
