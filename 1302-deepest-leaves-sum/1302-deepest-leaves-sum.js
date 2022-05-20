@@ -11,14 +11,14 @@
  * @return {number}
  */
 var deepestLeavesSum = function(root) {
-    const lastNodes = [];
+    const leafNodes = [];
     let maxDepth = 0;
     let answer = 0;
     
     const dfs = (node, depth) => {
         if(!node.left && !node.right) {
             maxDepth = Math.max(maxDepth, depth);
-            lastNodes.push([node.val, depth]);
+            leafNodes.push([node.val, depth]);
             return;
         }
         
@@ -28,7 +28,7 @@ var deepestLeavesSum = function(root) {
     
     dfs(root, 0);
     
-    lastNodes.forEach(node => {
+    leafNodes.forEach(node => {
         const [curNode, nodeDepth] = node;
         if(nodeDepth === maxDepth) {
             answer += curNode;
