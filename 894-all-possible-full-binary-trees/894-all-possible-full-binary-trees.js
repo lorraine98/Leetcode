@@ -44,7 +44,6 @@ function allPossibleFBT(n) {
             }
         }
     }
-    memo.set(n, answer);
     
     return answer;
 };
