@@ -17,7 +17,6 @@ var maximumUnits = function(boxTypes, truckSize) {
         else {
             answer += truckSize * unit;
             truckSize = 0;
-            return answer;
         }
     });
     
