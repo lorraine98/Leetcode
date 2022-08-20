@@ -12,8 +12,8 @@ var lengthOfLIS = function(nums) {
     for(let i = 1; i < len; i++) {
         let val = 1
         for(let j = i - 1; j >= 0; j--) {
-            if(nums[j] < nums[i] && val < dp[j]+1) {
-                val = dp[j]+1
+            if(nums[j] < nums[i] && val < dp[j] + 1) {
+                val = dp[j] + 1;
             }
             dp[i] = val;
         }
