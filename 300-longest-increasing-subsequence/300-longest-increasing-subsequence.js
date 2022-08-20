@@ -3,7 +3,6 @@
  * @return {number}
  */
 var lengthOfLIS = function(nums) {
-    let longestLen = 1;
     let dp = [];
     const len = nums.length;
     
