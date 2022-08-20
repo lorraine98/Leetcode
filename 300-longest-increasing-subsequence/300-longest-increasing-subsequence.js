@@ -3,10 +3,8 @@
  * @return {number}
  */
 var lengthOfLIS = function(nums) {
-    let dp = [];
     const len = nums.length;
-    
-    dp[0] = 1;
+    let dp = Array(len).fill(1);
     
     for(let i = 1; i < len; i++) {
         let val = 1
