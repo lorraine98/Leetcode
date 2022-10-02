@@ -12,17 +12,18 @@
  * @return {number[][]}
  */
 var pathSum = function(root, targetSum) {
-    if(!root) {
-        return [];
-    }
     
     const answer = [];
 
+    if(!root) {
+        return answer;
+    }
+    
     const dfs = (node, sum, nodePath) => {
         if(!node.left && !node.right) {
             const total = sum + node.val;
             if(total === targetSum) {
-                answer.push([...nodePath, node.val])
+                answer.push([...nodePath, node.val]);
             }
             return;
         }
