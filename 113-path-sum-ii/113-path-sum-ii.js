@@ -12,7 +12,6 @@
  * @return {number[][]}
  */
 var pathSum = function(root, targetSum) {
-    
     const answer = [];
 
     if(!root) {
@@ -28,8 +27,10 @@ var pathSum = function(root, targetSum) {
             return;
         }
 
-        node.right && dfs(node.right, sum + node.val, [...nodePath, node.val]);
-        node.left && dfs(node.left, sum + node.val, [...nodePath, node.val]);
+        nodePath.push(node.val);
+        node.right && dfs(node.right, sum + node.val, nodePath);
+        node.left && dfs(node.left, sum + node.val, nodePath);
+        nodePath.pop();
     }
 
     dfs(root, 0, []);
