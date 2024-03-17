@@ -4,10 +4,13 @@
  */
 
 var missingNumber = function(nums) {
-    nums.sort((a, b) => a- b);
+    const isExistArr = [];
+    for(let i = 0; i < nums.length; i++) {
+        isExistArr[nums[i]] = true;
+    }
 
     for(let i = 0; i <= nums.length; i++) {
-        if(i !== nums[i]) {
+        if(!isExistArr[i]) {
             return i;
         }
     }
