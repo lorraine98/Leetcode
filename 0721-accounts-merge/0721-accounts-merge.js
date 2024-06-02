@@ -49,7 +49,7 @@ var accountsMerge = function (accounts) {
     };
 
     const union = (x, y) => {
-        parents[find(x)] = find(y);
+        parents[find(x)] = parents[y];
     };
 
     for (const [name, ...emails] of accounts) {
@@ -72,7 +72,6 @@ var accountsMerge = function (accounts) {
             emails[parent] = [email];
         }
     }
-    console.log(emails)
 
     return Object.entries(emails).map(([email, x]) => [email2name[email], ...x.sort()]);
 };
