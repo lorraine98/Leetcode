@@ -17,7 +17,9 @@ var isSameTree = function(p, q) {
     const dfs = (node1, node2) => {
         if(!node1 && !node2) {
             return;
-        } else if(!node1 || !node2) {
+        } 
+        
+        if(!node1 || !node2) {
             answer = false;
             return;
         }
