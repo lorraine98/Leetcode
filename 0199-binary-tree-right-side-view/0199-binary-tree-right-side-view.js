@@ -18,10 +18,12 @@ var rightSideView = function (root) {
             return;
         }
 
-        answer[depth] = node.val;
+        if(answer[depth] === undefined) {
+            answer.push(node.val);
+        }
 
-        dfs(node.left, depth + 1);
         dfs(node.right, depth + 1);
+        dfs(node.left, depth + 1);
     }
 
     dfs(root, 0);
