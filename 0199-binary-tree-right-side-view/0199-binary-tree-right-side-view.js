@@ -10,21 +10,23 @@
  * @param {TreeNode} root
  * @return {number[]}
  */
-var rightSideView = function (root) {
-    const answer = [];
-
-    const dfs = (node, depth) => {
-        if (!node) {
-            return;
-        }
-
-        answer[depth] = node.val;
-
-        dfs(node.left, depth + 1);
-        dfs(node.right, depth + 1);
+const dfs = (node, depth, answer) => {
+    if (!node) {
+        return;
     }
 
-    dfs(root, 0);
+    answer[depth] = node.val;
+
+    dfs(node.left, depth + 1, answer);
+    dfs(node.right, depth + 1, answer);
 
     return answer;
+}
+
+var rightSideView = function (root) {
+    if (!root) {
+        return [];
+    }
+
+    return dfs(root, 0, []);
 };
