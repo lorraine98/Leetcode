@@ -3,6 +3,15 @@
  * @param {string} p
  * @return {number[]}
  */
+
+// const modulus = 100000;
+
+// for (let i = 0; i < 26; i++) {
+//     const char = String.fromCharCode(97 + i); // 'a'부터 'z'까지
+//     const value = char.charCodeAt(0) * (31 ** (i + 1));
+//     hashTable[char] = value % modulus; // 모듈로 연산으로 값을 줄임
+// }
+
 const hashTable = {
     a: 97,
     b: 196,
@@ -46,7 +55,6 @@ var findAnagrams = function (s, p) {
     const sLen = s.length;
     const pLen = p.length;
     const pHash = getHashNumber(p);
-    console.log('a', pHash)
 
     let prev = 0;
     let cur = getHashNumber(s.slice(0, pLen));
