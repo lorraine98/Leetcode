@@ -56,7 +56,6 @@ var findAnagrams = function (s, p) {
     const pLen = p.length;
     const pHash = getHashNumber(p);
 
-    let prev = 0;
     let cur = getHashNumber(s.slice(0, pLen));
 
     for (let i = 0; i < sLen; i++) {
@@ -64,8 +63,7 @@ var findAnagrams = function (s, p) {
             answer.push(i);
         }
 
-        prev = hashTable[s[i]];
-        cur = cur - prev + hashTable[s[i + pLen]];
+        cur = cur - hashTable[s[i]] + hashTable[s[i + pLen]];
     }
 
     return answer;
