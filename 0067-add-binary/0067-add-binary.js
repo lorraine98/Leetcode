@@ -8,14 +8,9 @@ var addBinary = function (a, b) {
     let answer = '';
     let temp = 0;
 
-    let $a = a;
-    let $b = b;
-
-    for (let i = max - 1; i >= 0; i--) {
-        const one = +$a.slice(-1);
-        const two = +$b.slice(-1);
-        $a = $a.slice(0, -1);
-        $b = $b.slice(0, -1);
+    for (let i = 1; i <= max; ++i) {
+        const one = +a[a.length - i];
+        const two = +b[b.length - i];
 
         let res = (!!(one && two) ? one + two : !!one ? one : two) + temp;
 
