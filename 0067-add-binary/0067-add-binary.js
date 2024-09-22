@@ -5,7 +5,7 @@
  */
 var addBinary = function (a, b) {
     const max = Math.max(a.length, b.length);
-    let answer = '';
+    let answer = [];
     let temp = 0;
 
     for (let i = 1; i <= max; ++i) {
@@ -20,8 +20,13 @@ var addBinary = function (a, b) {
         } else {
             temp = 0;
         }
-        answer = res + answer;
+
+        answer.push(res)
     }
 
-    return !!temp ? temp + answer : answer;
+    if(temp) {
+        answer.push(temp);
+    }
+
+    return answer.reverse().join('');
 };
