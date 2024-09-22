@@ -9,10 +9,10 @@ var addBinary = function (a, b) {
     let temp = 0;
 
     for (let i = 1; i <= max; ++i) {
-        const one = +a[a.length - i];
-        const two = +b[b.length - i];
+        const one = +(a[a.length - i] ?? 0);
+        const two = +(b[b.length - i] ?? 0);
 
-        let res = (!!(one && two) ? one + two : !!one ? one : two) + temp;
+        let res = one + two + temp;
 
         if (res >= 2) {
             temp = 1;
