@@ -2,7 +2,6 @@
  * @param {number[]} nums
  * @return {number}
  */
-
 // f(x) = f(x+1) + 1
 var longestConsecutive = function (nums) {
     const map = new Map();
@@ -13,6 +12,10 @@ var longestConsecutive = function (nums) {
     }
 
     const find = (num) => {
+        if (map.get(num) !== 0) {
+            return map.get(num);
+        }
+
         const next = num + 1;
         if (!map.has(next)) {
             map.set(num, 1);
